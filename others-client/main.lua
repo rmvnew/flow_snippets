@@ -193,77 +193,133 @@ local doors = config.doors -- Define a variável doors com os dados do config
 -- end)
 
 
--- Thread principal para gerenciar a lógica das portas
+-- -- Thread principal para gerenciar a lógica das portas
+-- Citizen.CreateThread(function()
+--     -- Solicita os sprites usados para desenhar o estado das portas (trancado/destrancado)
+--     RequestStreamedTextureDict(sprites[0][1], true)
+--     RequestStreamedTextureDict(sprites[1][1], true)
+
+--     while true do
+--         local time = 1000 -- Define o tempo de espera padrão como 1000ms (1 segundo)
+
+--         -- Obtém as coordenadas atuais do jogador
+--         local pedCoords = GetEntityCoords(PlayerPedId())
+
+--         -- Itera sobre todas as trancas configuradas
+--         for k, v in pairs(trancas) do
+--             -- Verifica se a porta correspondente existe no arquivo de configuração
+--             if doors[k] then
+--                 local configDoor = doors[k] -- Dados da porta no arquivo de configuração
+
+--                 -- Calcula a distância apenas nos eixos X e Y (ignorando a altura Z)
+--                 local distance = #(vector2(pedCoords.x, pedCoords.y) - vector2(configDoor.coords.x, configDoor.coords.y))
+
+--                 -- Depuração: Exibe informações específicas da porta 220 no console
+--                 if k == 220 then
+--                     print(string.format("[DEBUG] Porta: %d | Distância: %.2f | Configuração: %.2f", k, distance, configDoor.distance))
+--                 end
+
+--                 -- Verifica se o jogador está dentro da distância configurada para a porta
+--                 if distance <= configDoor.distance then
+--                     time = 5 -- Reduz o tempo de espera para 5ms enquanto o jogador estiver próximo
+
+--                     -- Determina o estado atual da porta (0 para destrancado, 1 para trancado)
+--                     local lockState = (v.trancado[1] and 1 or 0)
+--                     local sprite = sprites[lockState] -- Obtém o sprite correspondente ao estado atual
+
+--                     -- Desenha o sprite sobre a porta
+--                     drawSprite(configDoor.coords, sprite)
+
+--                     -- Verifica se o jogador pressionou a tecla E (código 38) e se não há tempo de espera
+--                     if IsControlJustPressed(0, 38) and segundos <= 0 then
+--                         segundos = 5 -- Define o tempo de espera para 5 segundos
+--                         -- Executa uma animação ao interagir com a porta
+--                         vRP._playAnim(true, {{"veh@mower@base", "start_engine"}}, false)
+--                         Citizen.Wait(2200) -- Aguarda 2,2 segundos para simular a interação
+
+--                         -- Alterna o estado da tranca (se estiver trancada, destranca, e vice-versa)
+--                         local novoEstado = not v.trancado[1]
+
+--                         -- Solicita ao servidor que sincronize o novo estado da porta
+--                         if vSERVER.syncLock(k, novoEstado, v.perm[1]) then
+--                             v.trancado[1] = novoEstado -- Atualiza o estado local da porta
+--                             if v.trancado[1] then
+--                                 -- Notifica o jogador que a porta foi trancada
+--                                 TriggerEvent("Notify", "sucesso", "Porta trancada.", 5)
+--                             else
+--                                 -- Notifica o jogador que a porta foi destrancada
+--                                 TriggerEvent("Notify", "importante", "Porta destrancada.", 5)
+--                             end
+--                         else
+--                             -- Caso a sincronização com o servidor falhe, notifica o jogador
+--                             TriggerEvent("Notify", "negado", "Falha ao sincronizar o estado da porta.", 5)
+--                         end
+--                     end
+--                 end
+--             else
+--                 -- Depuração: Exibe no console se a porta não está configurada no arquivo `doors`
+--                 print(string.format("[DEBUG] Porta %d não configurada em doors", k))
+--             end
+--         end
+
+--         -- Aguarda pelo tempo definido antes de continuar o loop
+--         Citizen.Wait(time)
+--     end
+-- end)
+
+
 Citizen.CreateThread(function()
-    -- Solicita os sprites usados para desenhar o estado das portas (trancado/destrancado)
+    -- Carrega os sprites usados para mostrar o estado das trancas
     RequestStreamedTextureDict(sprites[0][1], true)
     RequestStreamedTextureDict(sprites[1][1], true)
 
     while true do
         local time = 1000 -- Define o tempo de espera padrão como 1000ms (1 segundo)
+        local pedCoords = GetEntityCoords(PlayerPedId()) -- Obtém as coordenadas do jogador
 
-        -- Obtém as coordenadas atuais do jogador
-        local pedCoords = GetEntityCoords(PlayerPedId())
-
-        -- Itera sobre todas as trancas configuradas
         for k, v in pairs(trancas) do
-            -- Verifica se a porta correspondente existe no arquivo de configuração
-            if doors[k] then
-                local configDoor = doors[k] -- Dados da porta no arquivo de configuração
-
-                -- Calcula a distância apenas nos eixos X e Y (ignorando a altura Z)
+            if doors[k] then -- Verifica se a porta está configurada
+                local configDoor = doors[k]
+                -- Calcula a distância apenas em X e Y para evitar problemas com diferenças de altura
                 local distance = #(vector2(pedCoords.x, pedCoords.y) - vector2(configDoor.coords.x, configDoor.coords.y))
 
-                -- Depuração: Exibe informações específicas da porta 220 no console
-                if k == 220 then
-                    print(string.format("[DEBUG] Porta: %d | Distância: %.2f | Configuração: %.2f", k, distance, configDoor.distance))
+                -- Exibe o sprite da fechadura a 1 metro além da distância configurada
+                if distance <= (configDoor.distance + 1.0) then
+					time = 5 -- Reduz o tempo de espera para 5ms enquanto o jogador estiver próximo
+                    local lockState = (v.trancado[1] and 1 or 0)
+                    local sprite = sprites[lockState]
+                    drawSprite(configDoor.coords, sprite)
                 end
 
-                -- Verifica se o jogador está dentro da distância configurada para a porta
+                -- Permite interação apenas dentro da distância configurada
                 if distance <= configDoor.distance then
-                    time = 5 -- Reduz o tempo de espera para 5ms enquanto o jogador estiver próximo
 
-                    -- Determina o estado atual da porta (0 para destrancado, 1 para trancado)
-                    local lockState = (v.trancado[1] and 1 or 0)
-                    local sprite = sprites[lockState] -- Obtém o sprite correspondente ao estado atual
-
-                    -- Desenha o sprite sobre a porta
-                    drawSprite(configDoor.coords, sprite)
-
-                    -- Verifica se o jogador pressionou a tecla E (código 38) e se não há tempo de espera
                     if IsControlJustPressed(0, 38) and segundos <= 0 then
                         segundos = 5 -- Define o tempo de espera para 5 segundos
-                        -- Executa uma animação ao interagir com a porta
-                        vRP._playAnim(true, {{"veh@mower@base", "start_engine"}}, false)
+                        vRP._playAnim(true, {{"veh@mower@base", "start_engine"}}, false) -- Executa a animação
                         Citizen.Wait(2200) -- Aguarda 2,2 segundos para simular a interação
 
-                        -- Alterna o estado da tranca (se estiver trancada, destranca, e vice-versa)
+                        -- Alterna o estado da tranca
                         local novoEstado = not v.trancado[1]
 
-                        -- Solicita ao servidor que sincronize o novo estado da porta
+                        -- Sincroniza o novo estado da tranca com o servidor
                         if vSERVER.syncLock(k, novoEstado, v.perm[1]) then
                             v.trancado[1] = novoEstado -- Atualiza o estado local da porta
                             if v.trancado[1] then
-                                -- Notifica o jogador que a porta foi trancada
                                 TriggerEvent("Notify", "sucesso", "Porta trancada.", 5)
                             else
-                                -- Notifica o jogador que a porta foi destrancada
                                 TriggerEvent("Notify", "importante", "Porta destrancada.", 5)
                             end
                         else
-                            -- Caso a sincronização com o servidor falhe, notifica o jogador
+                            -- Notifica em caso de falha na sincronização
                             TriggerEvent("Notify", "negado", "Falha ao sincronizar o estado da porta.", 5)
                         end
                     end
                 end
-            else
-                -- Depuração: Exibe no console se a porta não está configurada no arquivo `doors`
-                print(string.format("[DEBUG] Porta %d não configurada em doors", k))
             end
         end
 
-        -- Aguarda pelo tempo definido antes de continuar o loop
-        Citizen.Wait(time)
+        Citizen.Wait(time) -- Aguarda pelo tempo definido antes de continuar o loop
     end
 end)
 
