@@ -286,7 +286,7 @@ Citizen.CreateThread(function()
                 -- Exibe o sprite da fechadura a 1 metro além da distância configurada
                 if distance <= (configDoor.distance + 1.0) then
 					time = 5 -- Reduz o tempo de espera para 5ms enquanto o jogador estiver próximo
-                    local lockState = (v.trancado[1] and 1 or 0)
+                    local lockState = (v.trancado[1] and 1 or 0);
                     local sprite = sprites[lockState]
                     drawSprite(configDoor.coords, sprite)
                 end

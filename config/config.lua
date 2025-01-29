@@ -24,16 +24,16 @@ config.blips = {
 --------------------------------------------------------------  
     { -30.84,-1103.74,26.42,326,0,"Concessionaria",0.5 },
     { 564.57,-1749.05,29.32,538,2,"Entrega de drogas",0.5 },
-    { 53.62,114.67,79.2, 126,13,"Emprego | Entregador",0.5 },
+    { 71.62,110.58,79.11, 126,13,"Emprego | Entregador",0.5 },
     { -841.65,5401.1,34.62,649,13,"Emprego | Lenhador",0.5 },
-    { 1054.05,-1952.6,32.1,78,13,"Emprego | Minerador",0.5 },
-    { 454.51,-600.97,28.56,513,13,"Emprego | Motorista",0.5 },
-    { 1132.1,-557.48,56.8,780,13,"Emprego | Pescador",0.5 },
-    { 3807.78,4478.64,6.37,729,13,"Emprego | Tartaruga",0.5 },
-    { 895.21,-178.85,74.71,198,13,"Emprego | Taxista",0.5 },
+    { 2570.02,2719.26,42.85,78,13,"Emprego | Minerador",0.5 },
+    { 434.19,-647.57,28.73,513,13,"Emprego | Motorista",0.5 },
     { -615.38,-1787.23,23.69,318,13,"Emprego | Lixeiro",0.5 },
 	{ 751.76,6459.06,31.53,477,13,"Emprego | Fazendeiro",0.5 },
-    { -552.27,5348.43,74.73,652,13,"Venda | Madeira",0.5 },
+    { -1591.46,5203.52,4.31,780,13,"Emprego | Pescador",0.5 },
+
+    { 3807.78,4478.64,6.37,729,13,"Emprego | Tartaruga",0.5 },
+    { 895.21,-178.85,74.71,198,13,"Emprego | Taxista",0.5 },
  --------------------------------------------------------------
 ------[BANCO]------------------------------------------------
 --------------------------------------------------------------   
@@ -310,6 +310,15 @@ config.doors = {
         [263] = { coords = vec3(484.75,-1315.71,29.2), distance = 5.0, text = { true }, trancado = { true }, hash = { -190780785 }, perm = { "perm.bennys" }, },
         [264] = { coords = vec3(-244.33,-1305.63,31.29), distance = 5.0, text = { true }, trancado = { true }, hash = { -1603817716 }, perm = { "perm.bennys" }, },
         [265] = { coords = vec3(-202.08,-1310.29,31.29), distance = 5.0, text = { true }, trancado = { true }, hash = { 1792343474 }, perm = { "perm.bennys" }, },
+       
+       
+        [266] = { coords = vec3(-152.09,294.76,98.89), distance = 1.0, text = { true }, trancado = { true }, hash = { -726253128 }, perm = { "perm.yakuza" }, },
+        [267] = { coords = vec3(-151.21,294.7,98.89), distance = 1.0, text = { true }, trancado = { true }, hash = { -1093560853 }, perm = { "perm.yakuza" }, },
+        [268] = { coords = vec3(-152.43,287.27,93.77), distance = 1.0, text = { true }, trancado = { true }, hash = { -1653288146 }, perm = { "perm.yakuza" }, },
+        [269] = { coords = vec3(-167.45,285.66,93.75), distance = 1.0, text = { true }, trancado = { true }, hash = { -369464256 }, perm = { "perm.yakuza" }, },
+        [270] = { coords = vec3(-169.35,285.68,93.75), distance = 1.0, text = { true }, trancado = { true }, hash = { 2012678195 }, perm = { "perm.yakuza" }, },
+        [271] = { coords = vec3(-170.34,285.87,93.75), distance = 1.0, text = { true }, trancado = { true }, hash = { -965106369 }, perm = { "perm.yakuza" }, },
+        [272] = { coords = vec3(-178.61,319.11,97.96), distance = 1.0, text = { true }, trancado = { true }, hash = { -1274314914 }, perm = { "perm.yakuza" }, },
 
 }
 
