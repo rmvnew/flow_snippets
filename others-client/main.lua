@@ -296,14 +296,15 @@ Citizen.CreateThread(function()
 
                     if IsControlJustPressed(0, 38) and segundos <= 0 then
                         segundos = 5 -- Define o tempo de espera para 5 segundos
-                        vRP._playAnim(true, {{"veh@mower@base", "start_engine"}}, false) -- Executa a animação
-                        Citizen.Wait(2200) -- Aguarda 2,2 segundos para simular a interação
+                        -- vRP._playAnim(true, {{"veh@mower@base", "start_engine"}}, false) -- Executa a animação
+                        -- Citizen.Wait(2200) 
 
                         -- Alterna o estado da tranca
                         local novoEstado = not v.trancado[1]
 
                         -- Sincroniza o novo estado da tranca com o servidor
-                        if vSERVER.syncLock(k, novoEstado, v.perm[1]) then
+                        -- if vSERVER.syncLock(k, novoEstado, v.perm[1]) then
+                        if vSERVER.syncLock(k, novoEstado, v.perm) then
                             v.trancado[1] = novoEstado -- Atualiza o estado local da porta
                             if v.trancado[1] then
                                 TriggerEvent("Notify", "sucesso", "Porta trancada.", 5)

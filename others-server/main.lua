@@ -16,13 +16,27 @@ function src.syncLock(area, status, permissao)
     local source = source
     local user_id = vRP.getUserId(source)
     if user_id then
-        if vRP.hasPermission(user_id, permissao) then
-            vCLIENT.setLock(-1, area, status)
-            trancas[area] = status
-            return true
-        else
+
+        local autorized = false
+
+       for _,v in pairs(permissao) do
+            
+            if vRP.hasPermission(user_id, v) then
+                autorized = true
+                vCLIENT.setLock(-1, area, status)
+                trancas[area] = status
+                return true
+            else
+                autorized = false
+                
+            end
+
+       end
+
+        if not autorized then
             TriggerClientEvent("Notify",source,"negado","Você não possui a chave dessa fechadura", 5)
         end
+
     end
 end
 

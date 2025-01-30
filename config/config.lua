@@ -8,11 +8,12 @@ config.blips = {
 --------------------------------------------------------------
 ------[LEGAIS]------------------------------------------------
 --------------------------------------------------------------
+    { 2608.17,5335.13,47.6,526,29,"PRF",0.5 }, 
     { -917.09,-2036.54,9.4,526,29,"BOPE",0.5 }, 
     { 835.22,171.39,83.25,526,29,"POLICIA CIVIL",0.5 },
     { 427.42,-979.49,30.7,526,29,"PMRJ",0.5 },
     {2128.86,3857.6,33.94,526,29,"POLICIA FEDERAL",0.5 },
-    {460.44,-1154.82,30.51,526,29,"CHOQUE",0.5 },
+    -- {460.44,-1154.82,30.51,526,29,"CHOQUE",0.5 },
     { -1854.21,-1214.84,13.01,681,47,"Bar do Pier",0.5 },
     { 1146.88,-1501.67,34.68,621,49,"Hospital",0.8 },
     { 824.7,-996.05,26.44,446,2,"Mecânica",0.8 }, --Mecanica Sul
@@ -173,7 +174,7 @@ config.blips = {
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 config.doors = {
 		-- HOSPITAL
-		[1] = { coords = vec3(1133.6,-1567.8,35.38), distance = 3.0, text = { true }, trancado = { true }, hash = { 1412301793 }, perm = { "perm.unizk" }, },  
+		[1] = { coords = vec3(1133.6,-1567.8,35.38), distance = 3.0, text = { true }, trancado = { true }, hash = { 1412301793 }, perm = { "perm.unizk","admin.permissao" }, },  
 		
 		-- PORTOES DA FACILITY
 		[50] = { coords = vec3(455.42,4818.96,-58.99), distance = 3.0, text = { false }, trancado = { true }, hash = { 4787313 }, perm = { "admin.permissao" }, },
@@ -186,39 +187,39 @@ config.doors = {
 		[73] = { coords = vec3(4990.16,-5715.12,19.89), distance = 3.0, text = { false }, trancado = { false }, hash = { -1574151574 }, perm = { "admin.permissao" }, },
 	
 		-- Vanilla
-		[120] = { coords = vec3(128.82,-1298.51,29.24), distance = 5.0, text = { true }, trancado = { true }, hash = { -1116041313 }, perm = { "perm.vanilla" }, },
-		[121] = { coords = vec3(95.63,-1285.66,29.27), distance = 5.0, text = { true }, trancado = { true }, hash = { 1695461688 }, perm = { "perm.vanilla" }, },
-		[122] = { coords = vec3(116.95,-1294.93,29.27), distance = 5.0, text = { true }, trancado = { true }, hash = { 390840000 }, perm = { "perm.vanilla" }, },
+		[120] = { coords = vec3(128.82,-1298.51,29.24), distance = 5.0, text = { true }, trancado = { true }, hash = { -1116041313 }, perm = { "perm.vanilla","admin.permissao" }, },
+		[121] = { coords = vec3(95.63,-1285.66,29.27), distance = 5.0, text = { true }, trancado = { true }, hash = { 1695461688 }, perm = { "perm.vanilla","admin.permissao" }, },
+		[122] = { coords = vec3(116.95,-1294.93,29.27), distance = 5.0, text = { true }, trancado = { true }, hash = { 390840000 }, perm = { "perm.vanilla","admin.permissao" }, },
 	
 		-- Cassino
-		[130] = { coords = vec3(930.87,30.14,81.16), distance = 5.0, text = { true }, trancado = { true }, hash = { 901693952 }, perm = { "perm.cassino" }, },
-		[131] = { coords = vec3(950.15,26.85,71.84), distance = 5.0, text = { true }, trancado = { true }, hash = { 1266543998 }, perm = { "perm.cassino" }, },
-		[132] = { coords = vec3(960.67,62.51,75.44), distance = 5.0, text = { true }, trancado = { true }, hash = { -643593781 }, perm = { "perm.cassino" }, },
-		[133] = { coords = vec3(960.3,62.75,75.44), distance = 5.0, text = { true }, trancado = { true }, hash = { -643593781 }, perm = { "perm.cassino" }, },
+		[130] = { coords = vec3(930.87,30.14,81.16), distance = 5.0, text = { true }, trancado = { true }, hash = { 901693952 }, perm = { "perm.cassino","admin.permissao" }, },
+		[131] = { coords = vec3(950.15,26.85,71.84), distance = 5.0, text = { true }, trancado = { true }, hash = { 1266543998 }, perm = { "perm.cassino","admin.permissao" }, },
+		[132] = { coords = vec3(960.67,62.51,75.44), distance = 5.0, text = { true }, trancado = { true }, hash = { -643593781 }, perm = { "perm.cassino","admin.permissao" }, },
+		[133] = { coords = vec3(960.3,62.75,75.44), distance = 5.0, text = { true }, trancado = { true }, hash = { -643593781 }, perm = { "perm.cassino","admin.permissao" }, },
 
 
-        [160] = { coords = vec3(407.74,-1490.42,30.14), distance = 5.0, text = { true }, trancado = { true }, hash = { 964838196 }, perm = { "perm.medelin" }, },
-        [161] = { coords = vec3(408.43,-1499.43,30.14), distance = 5.0, text = { true }, trancado = { true }, hash = { 964838196 }, perm = { "perm.medelin" }, },
-        [162] = { coords = vec3(419.97,-1481.81,30.14), distance = 5.0, text = { true }, trancado = { true }, hash = { 964838196 }, perm = { "perm.medelin" }, },
-        [163] = { coords = vec3(416.22,-1485.56,30.14), distance = 5.0, text = { true }, trancado = { true }, hash = { 964838196 }, perm = { "perm.medelin" }, },
+        [160] = { coords = vec3(407.74,-1490.42,30.14), distance = 5.0, text = { true }, trancado = { true }, hash = { 964838196 }, perm = { "perm.medelin","admin.permissao" }, },
+        [161] = { coords = vec3(408.43,-1499.43,30.14), distance = 5.0, text = { true }, trancado = { true }, hash = { 964838196 }, perm = { "perm.medelin","admin.permissao" }, },
+        [162] = { coords = vec3(419.97,-1481.81,30.14), distance = 5.0, text = { true }, trancado = { true }, hash = { 964838196 }, perm = { "perm.medelin","admin.permissao" }, },
+        [163] = { coords = vec3(416.22,-1485.56,30.14), distance = 5.0, text = { true }, trancado = { true }, hash = { 964838196 }, perm = { "perm.medelin","admin.permissao" }, },
        
-        [171] = { coords = vec3(-85.72,834.61,235.91), distance = 5.0, text = { true }, trancado = { true }, hash = { 110411286 }, perm = { "perm.casadolago" }, },
-        [173] = { coords = vec3(-90.29,821.87,239.92), distance = 5.0, text = { true }, trancado = { true }, hash = { -1186396713 }, perm = { "perm.casadolago" }, },
+        [171] = { coords = vec3(-85.72,834.61,235.91), distance = 5.0, text = { true }, trancado = { true }, hash = { 110411286 }, perm = { "perm.casadolago","admin.permissao" }, },
+        [173] = { coords = vec3(-90.29,821.87,239.92), distance = 5.0, text = { true }, trancado = { true }, hash = { -1186396713 }, perm = { "perm.casadolago","admin.permissao" }, },
 
         -- [174] = { coords = vec3(-271.88,-727.71,125.48), distance = 5.0, text = { true }, trancado = { true }, hash = { 1026320033 }, perm = { "perm.aphouse" }, },
 
 
-        [181] = { coords = vec3(847.96,163.69,83.24), distance = 1.0, text = { true }, trancado = { true }, hash = { 24505041 }, perm = { "perm.policiacivil" }, },
-        [182] = { coords = vec3(845.78,164.96,83.24), distance = 1.0, text = { true }, trancado = { true }, hash = { 24505041 }, perm = { "perm.policiacivil" }, },
-        [183] = { coords = vec3(843.86,166.2,83.24), distance = 1.0, text = { true }, trancado = { true }, hash = { 24505041 }, perm = { "perm.policiacivil" }, },
-        [184] = { coords = vec3(832.19,173.46,83.24), distance = 1.0, text = { true }, trancado = { true }, hash = { 1534879837 }, perm = { "perm.policiacivil" }, },
-        [185] = { coords = vec3(833.2,174.91,83.24), distance = 1.0, text = { true }, trancado = { true }, hash = { 1534879837 }, perm = { "perm.policiacivil" }, },
-        [186] = { coords = vec3(835.79,170.01,87.23), distance = 3.0, text = { true }, trancado = { true }, hash = { -1871471999 }, perm = { "perm.baupoliciacivillider" }, },
+        [181] = { coords = vec3(847.96,163.69,83.24), distance = 1.0, text = { true }, trancado = { true }, hash = { 24505041 }, perm = { "perm.policiacivil","admin.permissao" }, },
+        [182] = { coords = vec3(845.78,164.96,83.24), distance = 1.0, text = { true }, trancado = { true }, hash = { 24505041 }, perm = { "perm.policiacivil","admin.permissao" }, },
+        [183] = { coords = vec3(843.86,166.2,83.24), distance = 1.0, text = { true }, trancado = { true }, hash = { 24505041 }, perm = { "perm.policiacivil","admin.permissao" }, },
+        [184] = { coords = vec3(832.19,173.46,83.24), distance = 1.0, text = { true }, trancado = { true }, hash = { 1534879837 }, perm = { "perm.policiacivil","admin.permissao" }, },
+        [185] = { coords = vec3(833.2,174.91,83.24), distance = 1.0, text = { true }, trancado = { true }, hash = { 1534879837 }, perm = { "perm.policiacivil","admin.permissao" }, },
+        [186] = { coords = vec3(835.79,170.01,87.23), distance = 3.0, text = { true }, trancado = { true }, hash = { -1871471999 }, perm = { "perm.baupoliciacivillider","admin.permissao" }, },
 
         
 
-        [209] = { coords = vec3(-2021.77,-456.3,11.54), distance = 7.0, text = { true }, trancado = { true }, hash = { -1603386241 }, perm = { "perm.policia" }, },
-        [210] = { coords = vec3(-2049.71,-443.7,12.27), distance = 2.0, text = { true }, trancado = { true }, hash = { -906816561 }, perm = { "perm.policia" }, },
+        [209] = { coords = vec3(-2021.77,-456.3,11.54), distance = 7.0, text = { true }, trancado = { true }, hash = { -1603386241 }, perm = { "perm.policia","admin.permissao" }, },
+        [210] = { coords = vec3(-2049.71,-443.7,12.27), distance = 2.0, text = { true }, trancado = { true }, hash = { -906816561 }, perm = { "perm.policia","admin.permissao" }, },
         -- [211] = { coords = vec3(445.09,-988.94,30.68), distance = 2.0, text = { true }, trancado = { true }, hash = { 185711165 }, perm = { "perm.policia" }, },
         -- [212] = { coords = vec3(444.16,-988.97,30.68), distance = 2.0, text = { true }, trancado = { true }, hash = { 185711165 }, perm = { "perm.policia" }, },
         -- [213] = { coords = vec3(463.63,-992.18,24.9), distance = 2.0, text = { true }, trancado = { true }, hash = { 631614199 }, perm = { "perm.policia" }, },
@@ -229,96 +230,96 @@ config.doors = {
 
         -- [217] = { coords = vec3(-928.32,-2035.31,9.4), distance = 3.0, text = { true }, trancado = { true }, hash = { 585913815 }, perm = { "perm.baupolicialider" }, },
 
-        [218] = { coords = vec3(114.03,-1328.72,29.39), distance = 4.0, text = { true }, trancado = { true }, hash = { 741314661 }, perm = { "perm.vanilla" }, }, --portão vanilla
-        [219] = { coords = vec3(65.15,-1915.76,21.58), distance = 4.0, text = { true }, trancado = { true }, hash = { 741314661 }, perm = { "perm.roxos" }, },    --portão groove
+        [218] = { coords = vec3(114.03,-1328.72,29.39), distance = 4.0, text = { true }, trancado = { true }, hash = { 741314661 }, perm = { "perm.vanilla","admin.permissao" }, }, --portão vanilla
+        [219] = { coords = vec3(65.15,-1915.76,21.58), distance = 4.0, text = { true }, trancado = { true }, hash = { 741314661 }, perm = { "perm.roxos","admin.permissao" }, },    --portão groove
         
         
         -- bahamas
         
         -- [220] = { coords = vec3(-1352.83,-671.92,25.76), distance = 7.0, text = { true }, trancado = { true }, hash = { 1673290408 }, perm = { "perm.bahamas" }, },    
-        [221] = { coords = vec3(-1392.32,-639.69,28.68), distance = 1.0, text = { true }, trancado = { true }, hash = { -2003105485 }, perm = { "perm.bahamas" }, },    
-        [222] = { coords = vec3(-1394.62,-636.15,28.68), distance = 5.0, text = { true }, trancado = { true }, hash = { -822900180 }, perm = { "perm.bahamas" }, },    
-        [223] = { coords = vec3(-1392.29,-625.14,30.31), distance = 1.0, text = { true }, trancado = { true }, hash = { 401003935 }, perm = { "perm.bahamas" }, },    
-        [224] = { coords = vec3(-1371.67,-608.07,30.72), distance = 1.0, text = { true }, trancado = { true }, hash = { 401003935 }, perm = { "perm.bahamas" }, },    
-        [225] = { coords = vec3(-1387.7,-587.34,30.31), distance = 1.0, text = { true }, trancado = { true }, hash = { -1119680854 }, perm = { "perm.bahamas" }, },    
-        [226] = { coords = vec3(-1388.33,-587.68,30.31), distance = 1.0, text = { true }, trancado = { true }, hash = { -1119680854 }, perm = { "perm.bahamas" }, },    
+        [221] = { coords = vec3(-1392.32,-639.69,28.68), distance = 1.0, text = { true }, trancado = { true }, hash = { -2003105485 }, perm = { "perm.bahamas","admin.permissao" }, },    
+        [222] = { coords = vec3(-1394.62,-636.15,28.68), distance = 5.0, text = { true }, trancado = { true }, hash = { -822900180 }, perm = { "perm.bahamas","admin.permissao" }, },    
+        [223] = { coords = vec3(-1392.29,-625.14,30.31), distance = 1.0, text = { true }, trancado = { true }, hash = { 401003935 }, perm = { "perm.bahamas","admin.permissao" }, },    
+        [224] = { coords = vec3(-1371.67,-608.07,30.72), distance = 1.0, text = { true }, trancado = { true }, hash = { 401003935 }, perm = { "perm.bahamas","admin.permissao" }, },    
+        [225] = { coords = vec3(-1387.7,-587.34,30.31), distance = 1.0, text = { true }, trancado = { true }, hash = { -1119680854 }, perm = { "perm.bahamas","admin.permissao" }, },    
+        [226] = { coords = vec3(-1388.33,-587.68,30.31), distance = 1.0, text = { true }, trancado = { true }, hash = { -1119680854 }, perm = { "perm.bahamas","admin.permissao" }, },    
         
         
         -- CatCafe
         
-        [227] = { coords = vec3(-601.38,-1059.37,22.54), distance = 1.0, text = { true }, trancado = { true }, hash = { 522844070 }, perm = { "perm.catcafe" }, },    
-        [228] = { coords = vec3(-601.25,-1056.06,22.54), distance = 1.0, text = { true }, trancado = { true }, hash = { 1099436502 }, perm = { "perm.catcafe" }, },    
-        [229] = { coords = vec3(-587.61,-1052.79,22.34), distance = 1.0, text = { true }, trancado = { true }, hash = { -1283712428 }, perm = { "perm.catcafe" }, },    
-        [230] = { coords = vec3(-581.36,-1069.22,22.34), distance = 1.0, text = { true }, trancado = { true }, hash = { 526179188 }, perm = { "perm.catcafe" }, },    
-        [231] = { coords = vec3(-580.81,-1069.33,22.34), distance = 1.0, text = { true }, trancado = { true }, hash = { -69331849 }, perm = { "perm.catcafe" }, },    
-        [232] = { coords = vec3(-572.76,-1057.17,26.61), distance = 1.0, text = { true }, trancado = { true }, hash = { 2089009131 }, perm = { "perm.catcafe" }, },    
+        [227] = { coords = vec3(-601.38,-1059.37,22.54), distance = 1.0, text = { true }, trancado = { true }, hash = { 522844070 }, perm = { "perm.catcafe","admin.permissao" }, },    
+        [228] = { coords = vec3(-601.25,-1056.06,22.54), distance = 1.0, text = { true }, trancado = { true }, hash = { 1099436502 }, perm = { "perm.catcafe","admin.permissao" }, },    
+        [229] = { coords = vec3(-587.61,-1052.79,22.34), distance = 1.0, text = { true }, trancado = { true }, hash = { -1283712428 }, perm = { "perm.catcafe","admin.permissao" }, },    
+        [230] = { coords = vec3(-581.36,-1069.22,22.34), distance = 1.0, text = { true }, trancado = { true }, hash = { 526179188 }, perm = { "perm.catcafe","admin.permissao" }, },    
+        [231] = { coords = vec3(-580.81,-1069.33,22.34), distance = 1.0, text = { true }, trancado = { true }, hash = { -69331849 }, perm = { "perm.catcafe","admin.permissao" }, },    
+        [232] = { coords = vec3(-572.76,-1057.17,26.61), distance = 1.0, text = { true }, trancado = { true }, hash = { 2089009131 }, perm = { "perm.catcafe","admin.permissao" }, },    
 
 
     --  Bope
 
-        [233] = { coords = vec3(-952.93,-2051.84,9.4), distance = 1.0, text = { true }, trancado = { true }, hash = { -697504885 }, perm = { "perm.bope" }, }, 
-        [234] = { coords = vec3(-952.85,-2053.78,9.4), distance = 1.0, text = { true }, trancado = { true }, hash = { 279032130 }, perm = { "perm.bope" }, }, 
-        [235] = { coords = vec3(-938.13,-2048.65,6.1), distance = 1.0, text = { true }, trancado = { true }, hash = { 279032130 }, perm = { "perm.bope" }, }, 
-        [236] = { coords = vec3(-952.49,-2049.53,6.1), distance = 1.0, text = { true }, trancado = { true }, hash = { 279032130 }, perm = { "perm.bope" }, },
-        [237] = { coords = vec3(-956.21,-2049.21,9.4), distance = 1.0, text = { true }, trancado = { true }, hash = { -697504885 }, perm = { "perm.bope" }, },
+        [233] = { coords = vec3(-952.93,-2051.84,9.4), distance = 1.0, text = { true }, trancado = { true }, hash = { -697504885 }, perm = { "perm.bope","admin.permissao" }, }, 
+        [234] = { coords = vec3(-952.85,-2053.78,9.4), distance = 1.0, text = { true }, trancado = { true }, hash = { 279032130 }, perm = { "perm.bope","admin.permissao" }, }, 
+        [235] = { coords = vec3(-938.13,-2048.65,6.1), distance = 1.0, text = { true }, trancado = { true }, hash = { 279032130 }, perm = { "perm.bope","admin.permissao" }, }, 
+        [236] = { coords = vec3(-952.49,-2049.53,6.1), distance = 1.0, text = { true }, trancado = { true }, hash = { 279032130 }, perm = { "perm.bope","admin.permissao" }, },
+        [237] = { coords = vec3(-956.21,-2049.21,9.4), distance = 1.0, text = { true }, trancado = { true }, hash = { -697504885 }, perm = { "perm.bope","admin.permissao" }, },
        
-        [238] = { coords = vec3(-928.33,-2035.21,9.4), distance = 1.0, text = { true }, trancado = { true }, hash = { 585913815 }, perm = { "perm.baubopelider" }, },
+        [238] = { coords = vec3(-928.33,-2035.21,9.4), distance = 1.0, text = { true }, trancado = { true }, hash = { 585913815 }, perm = { "perm.baubopelider","admin.permissao" }, },
        
-        [239] = { coords = vec3(-964.58,-2067.03,9.4), distance = 7.0, text = { true }, trancado = { true }, hash = { 1869704900 }, perm = { "perm.bope" }, },
-        [240] = { coords = vec3(-954.23,-2058.5,9.4), distance = 1.0, text = { true }, trancado = { true }, hash = { 585913815 }, perm = { "perm.bope" }, },
-        [241] = { coords = vec3(-954.87,-2058.0,9.4), distance = 1.0, text = { true }, trancado = { true }, hash = { 585913815 }, perm = { "perm.bope" }, },
-        [242] = { coords = vec3(-953.72,-2044.08,9.5), distance = 1.0, text = { true }, trancado = { true }, hash = { 585913815 }, perm = { "perm.bope" }, },
-        [243] = { coords = vec3(-915.63,-2037.05,9.4), distance = 1.0, text = { true }, trancado = { true }, hash = { 22483629 }, perm = { "perm.bope" }, },
-        [244] = { coords = vec3(-916.47,-2037.73,9.4), distance = 1.0, text = { true }, trancado = { true }, hash = { 22483629 }, perm = { "perm.bope" }, },
-        [245] = { coords = vec3(-932.1,-2044.7,9.4), distance = 3.0, text = { true }, trancado = { true }, hash = { 279032130 }, perm = { "perm.bope" }, },
-        [246] = { coords = vec3(-943.27,-2054.5,6.1), distance = 1.0, text = { true }, trancado = { true }, hash = { 279032130 }, perm = { "perm.bope" }, },
+        [239] = { coords = vec3(-964.58,-2067.03,9.4), distance = 7.0, text = { true }, trancado = { true }, hash = { 1869704900 }, perm = { "perm.bope","admin.permissao" }, },
+        [240] = { coords = vec3(-954.23,-2058.5,9.4), distance = 1.0, text = { true }, trancado = { true }, hash = { 585913815 }, perm = { "perm.bope","admin.permissao" }, },
+        [241] = { coords = vec3(-954.87,-2058.0,9.4), distance = 1.0, text = { true }, trancado = { true }, hash = { 585913815 }, perm = { "perm.bope","admin.permissao" }, },
+        [242] = { coords = vec3(-953.72,-2044.08,9.5), distance = 1.0, text = { true }, trancado = { true }, hash = { 585913815 }, perm = { "perm.bope","admin.permissao" }, },
+        [243] = { coords = vec3(-915.63,-2037.05,9.4), distance = 1.0, text = { true }, trancado = { true }, hash = { 22483629 }, perm = { "perm.bope","admin.permissao" }, },
+        [244] = { coords = vec3(-916.47,-2037.73,9.4), distance = 1.0, text = { true }, trancado = { true }, hash = { 22483629 }, perm = { "perm.bope","admin.permissao" }, },
+        [245] = { coords = vec3(-932.1,-2044.7,9.4), distance = 3.0, text = { true }, trancado = { true }, hash = { 279032130 }, perm = { "perm.bope","admin.permissao" }, },
+        [246] = { coords = vec3(-943.27,-2054.5,6.1), distance = 1.0, text = { true }, trancado = { true }, hash = { 279032130 }, perm = { "perm.bope","admin.permissao" }, },
      
      
         -- Militar
 
-        [247] = { coords = vec3(488.88,-1022.22,28.21), distance = 7.0, text = { true }, trancado = { true }, hash = { -1603817716 }, perm = { "perm.policia" }, },
-        [248] = { coords = vec3(469.35,-1014.61,26.39), distance = 1.0, text = { true }, trancado = { true }, hash = { -2023754432 }, perm = { "perm.policia" }, },
-        [249] = { coords = vec3(467.97,-1014.47,26.39), distance = 1.0, text = { true }, trancado = { true }, hash = { -2023754432 }, perm = { "perm.policia" }, },
+        [247] = { coords = vec3(488.88,-1022.22,28.21), distance = 7.0, text = { true }, trancado = { true }, hash = { -1603817716 }, perm = { "perm.policia","admin.permissao" }, },
+        [248] = { coords = vec3(469.35,-1014.61,26.39), distance = 1.0, text = { true }, trancado = { true }, hash = { -2023754432 }, perm = { "perm.policia","admin.permissao" }, },
+        [249] = { coords = vec3(467.97,-1014.47,26.39), distance = 1.0, text = { true }, trancado = { true }, hash = { -2023754432 }, perm = { "perm.policia","admin.permissao" }, },
         
         
         
         -- Mec Turtle
         
-        [250] = { coords = vec3(823.39,-993.83,26.49), distance = 7.0, text = { true }, trancado = { true }, hash = { -1551033277 }, perm = { "perm.turtle" }, },
+        [250] = { coords = vec3(823.39,-993.83,26.49), distance = 7.0, text = { true }, trancado = { true }, hash = { -1551033277 }, perm = { "perm.turtle","admin.permissao" }, },
        
         -- Mec LS Custom
         
-        [251] = { coords = vec3(-356.43,-134.46,38.99), distance = 5.0, text = { true }, trancado = { true }, hash = { 1542392972 }, perm = { "perm.lscustom" }, },
-        [252] = { coords = vec3(-350.22,-117.25,38.97), distance = 5.0, text = { true }, trancado = { true }, hash = { 1542392972 }, perm = { "perm.lscustom" }, },
-        [253] = { coords = vec3(-365.15,-102.87,39.02), distance = 5.0, text = { true }, trancado = { true }, hash = { 260701421 }, perm = { "perm.lscustom" }, },
-        [254] = { coords = vec3(-372.21,-100.37,39.04), distance = 5.0, text = { true }, trancado = { true }, hash = { 260701421 }, perm = { "perm.lscustom" }, },
+        [251] = { coords = vec3(-356.43,-134.46,38.99), distance = 5.0, text = { true }, trancado = { true }, hash = { 1542392972 }, perm = { "perm.lscustom","admin.permissao" }, },
+        [252] = { coords = vec3(-350.22,-117.25,38.97), distance = 5.0, text = { true }, trancado = { true }, hash = { 1542392972 }, perm = { "perm.lscustom","admin.permissao" }, },
+        [253] = { coords = vec3(-365.15,-102.87,39.02), distance = 5.0, text = { true }, trancado = { true }, hash = { 260701421 }, perm = { "perm.lscustom","admin.permissao" }, },
+        [254] = { coords = vec3(-372.21,-100.37,39.04), distance = 5.0, text = { true }, trancado = { true }, hash = { 260701421 }, perm = { "perm.lscustom","admin.permissao" }, },
        
        
     --    STO Motors
-        [255] = { coords = vec3(55.22,-1738.87,29.59), distance = 5.0, text = { true }, trancado = { true }, hash = { 434405470 }, perm = { "perm.sto" }, },
-        [256] = { coords = vec3(64.17,-1728.88,29.64), distance = 5.0, text = { true }, trancado = { true }, hash = { 434405470 }, perm = { "perm.sto" }, },
-        [257] = { coords = vec3(89.62,-1746.1,30.06), distance = 3.0, text = { true }, trancado = { true }, hash = { 1932856522 }, perm = { "perm.sto" }, },
-        [258] = { coords = vec3(79.51,-1732.62,33.85), distance = 1.0, text = { true }, trancado = { true }, hash = { -1628380111 }, perm = { "perm.baulidersto" }, },
-        [259] = { coords = vec3(80.17,-1731.89,33.85), distance = 1.0, text = { true }, trancado = { true }, hash = { -1628380111 }, perm = { "perm.baulidersto" }, },
+        [255] = { coords = vec3(55.22,-1738.87,29.59), distance = 5.0, text = { true }, trancado = { true }, hash = { 434405470 }, perm = { "perm.sto","admin.permissao" }, },
+        [256] = { coords = vec3(64.17,-1728.88,29.64), distance = 5.0, text = { true }, trancado = { true }, hash = { 434405470 }, perm = { "perm.sto","admin.permissao" }, },
+        [257] = { coords = vec3(89.62,-1746.1,30.06), distance = 3.0, text = { true }, trancado = { true }, hash = { 1932856522 }, perm = { "perm.sto","admin.permissao" }, },
+        [258] = { coords = vec3(79.51,-1732.62,33.85), distance = 1.0, text = { true }, trancado = { true }, hash = { -1628380111 }, perm = { "perm.baulidersto","admin.permissao" }, },
+        [259] = { coords = vec3(80.17,-1731.89,33.85), distance = 1.0, text = { true }, trancado = { true }, hash = { -1628380111 }, perm = { "perm.baulidersto","admin.permissao" }, },
       
       
-        [260] = { coords = vec3(486.19,-1408.9,29.28), distance = 5.0, text = { true }, trancado = { true }, hash = { -1234764774 }, perm = { "perm.bennys" }, },
-        [261] = { coords = vec3(491.79,-1410.1,29.27), distance = 5.0, text = { true }, trancado = { true }, hash = { -1234764774 }, perm = { "perm.bennys" }, },
-        -- [262] = { coords = vec3(494.62,-1311.67,29.28), distance = 5.0, text = { true }, trancado = { true }, hash = { 115679102 }, perm = { "perm.bennys" }, },
-        [262] = { coords = vec3(494.62,-1311.67,29.28), distance = 5.0, text = { true }, trancado = { true }, hash = { -1927271438 }, perm = { "perm.bennys" }, },
+        [260] = { coords = vec3(486.19,-1408.9,29.28), distance = 5.0, text = { true }, trancado = { true }, hash = { -1234764774 }, perm = { "perm.bennys","admin.permissao" }, },
+        [261] = { coords = vec3(491.79,-1410.1,29.27), distance = 5.0, text = { true }, trancado = { true }, hash = { -1234764774 }, perm = { "perm.bennys","admin.permissao" }, },
+        -- [262] = { coords = vec3(494.62,-1311.67,29.28), distance = 5.0, text = { true }, trancado = { true }, hash = { 115679102 }, perm = { "perm.bennys","admin.permissao" }, },
+        [262] = { coords = vec3(494.62,-1311.67,29.28), distance = 5.0, text = { true }, trancado = { true }, hash = { -1927271438 }, perm = { "perm.bennys","admin.permissao" }, },
         
-        [263] = { coords = vec3(484.75,-1315.71,29.2), distance = 5.0, text = { true }, trancado = { true }, hash = { -190780785 }, perm = { "perm.bennys" }, },
-        [264] = { coords = vec3(-244.33,-1305.63,31.29), distance = 5.0, text = { true }, trancado = { true }, hash = { -1603817716 }, perm = { "perm.bennys" }, },
-        [265] = { coords = vec3(-202.08,-1310.29,31.29), distance = 5.0, text = { true }, trancado = { true }, hash = { 1792343474 }, perm = { "perm.bennys" }, },
+        [263] = { coords = vec3(484.75,-1315.71,29.2), distance = 5.0, text = { true }, trancado = { true }, hash = { -190780785 }, perm = { "perm.bennys","admin.permissao" }, },
+        [264] = { coords = vec3(-244.33,-1305.63,31.29), distance = 5.0, text = { true }, trancado = { true }, hash = { -1603817716 }, perm = { "perm.bennys","admin.permissao" }, },
+        [265] = { coords = vec3(-202.08,-1310.29,31.29), distance = 5.0, text = { true }, trancado = { true }, hash = { 1792343474 }, perm = { "perm.bennys","admin.permissao" }, },
        
        
-        [266] = { coords = vec3(-152.09,294.76,98.89), distance = 1.0, text = { true }, trancado = { true }, hash = { -726253128 }, perm = { "perm.yakuza" }, },
-        [267] = { coords = vec3(-151.21,294.7,98.89), distance = 1.0, text = { true }, trancado = { true }, hash = { -1093560853 }, perm = { "perm.yakuza" }, },
-        [268] = { coords = vec3(-152.43,287.27,93.77), distance = 1.0, text = { true }, trancado = { true }, hash = { -1653288146 }, perm = { "perm.yakuza" }, },
-        [269] = { coords = vec3(-167.45,285.66,93.75), distance = 1.0, text = { true }, trancado = { true }, hash = { -369464256 }, perm = { "perm.yakuza" }, },
-        [270] = { coords = vec3(-169.35,285.68,93.75), distance = 1.0, text = { true }, trancado = { true }, hash = { 2012678195 }, perm = { "perm.yakuza" }, },
-        [271] = { coords = vec3(-170.34,285.87,93.75), distance = 1.0, text = { true }, trancado = { true }, hash = { -965106369 }, perm = { "perm.yakuza" }, },
-        [272] = { coords = vec3(-178.61,319.11,97.96), distance = 1.0, text = { true }, trancado = { true }, hash = { -1274314914 }, perm = { "perm.yakuza" }, },
+        [266] = { coords = vec3(-152.09,294.76,98.89), distance = 1.0, text = { true }, trancado = { true }, hash = { -726253128 }, perm = { "perm.yakuza","admin.permissao" }, },
+        [267] = { coords = vec3(-151.21,294.7,98.89), distance = 1.0, text = { true }, trancado = { true }, hash = { -1093560853 }, perm = { "perm.yakuza","admin.permissao" }, },
+        [268] = { coords = vec3(-152.43,287.27,93.77), distance = 1.0, text = { true }, trancado = { true }, hash = { -1653288146 }, perm = { "perm.yakuza","admin.permissao" }, },
+        [269] = { coords = vec3(-167.45,285.66,93.75), distance = 1.0, text = { true }, trancado = { true }, hash = { -369464256 }, perm = { "perm.yakuza","admin.permissao" }, },
+        [270] = { coords = vec3(-169.35,285.68,93.75), distance = 1.0, text = { true }, trancado = { true }, hash = { 2012678195 }, perm = { "perm.yakuza","admin.permissao" }, },
+        [271] = { coords = vec3(-170.34,285.87,93.75), distance = 1.0, text = { true }, trancado = { true }, hash = { -965106369 }, perm = { "perm.yakuza","admin.permissao" }, },
+        [272] = { coords = vec3(-178.61,319.11,97.96), distance = 1.0, text = { true }, trancado = { true }, hash = { -1274314914 }, perm = { "perm.yakuza","admin.permissao" }, },
 
 }
 
@@ -401,6 +402,14 @@ config.elevador = {
             ["T"] = {470.88,-985.02,30.68 }
         }
     },
+    
+    ["PF"] = {
+        name = "PF",
+        andares = {
+            ["H"] = {2137.77,3854.73,42.06},
+            ["T"] = {2137.23,3854.21,34.1 }
+        }
+    },
 
 
 
@@ -435,7 +444,10 @@ config.locationElevador = {
    
     { type = "Militar", coords = vec3(463.57,-986.79,43.69), andar = "H" },
     { type = "Militar", coords = vec3(470.88,-985.02,30.68), andar = "T" },
+    
+    { type = "PF", coords = vec3(2137.77,3854.73,42.06), andar = "H" },
+    { type = "PF", coords = vec3(2137.23,3854.21,34.1), andar = "T" },
 
-
+    
 
 } 
